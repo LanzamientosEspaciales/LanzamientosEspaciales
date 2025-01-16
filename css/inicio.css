@@ -145,3 +145,46 @@
     outline: none;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
+
+
+/* Sección del canal de YT */
+
+/* Sección de últimos videos */
+.latest-videos {
+    padding: 3rem;
+    background-color: black;
+    text-align: center;
+}
+
+.latest-videos h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+}
+
+.video-card .video-title {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    color: white;
+}
