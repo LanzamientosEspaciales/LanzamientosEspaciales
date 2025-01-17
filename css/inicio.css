@@ -1,3 +1,15 @@
+/* Carga de fuentes */
+@font-face {
+    font-family: 'Erbaum';
+    src: url('../fonts/Erbaum-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Erbaum';
+    src: url('../fonts/Erbaum-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
 /* Hero principal */
 .hero {
     position: relative;
@@ -8,6 +20,15 @@
     align-items: center;
     text-align: center;
     color: #fff;
+}
+
+/* Crear separadores */
+
+.separador {
+    width: 100%;
+    height: 10px;
+    background-color: #000034;
+    filter: blur(10px);
 }
 
 .hero::before {
@@ -69,11 +90,7 @@
     color: #fff;
     overflow: hidden;
     transition: all 0.25s;
-}
-
-.launch-card:hover {
-    transform: scale(1.05);
-    border-radius: 20px;
+    z-index: 3;
 }
 
 /* Sombra naranja para lanzamientos importantes */
@@ -93,6 +110,7 @@
     font-weight: bold;
     margin-bottom: 0.8rem;
     color: #C1272D; /* Rojo similar al de SpaceX */
+    text-align: center;
 }
 
 .launch-card .launch-date-time {
@@ -115,6 +133,7 @@
     border-radius: 10px;
     margin-top: 1rem;
     aspect-ratio: 16/9;
+    padding-bottom: 25px;
 }
 
 /* Estilo del botón "Ver más" */
@@ -146,13 +165,64 @@
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
+/* Boton ver calendario */
+
+.custom-btn {
+    width: 300px;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 1px 5px;
+    font-family: 'Erbaum', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    border-color: #fff;
+    outline: none;
+    margin: 20px;
+    z-index: 4;
+  }
+
+  .btn-14 {
+    background: rgba(255, 255, 255, 0);
+    z-index: 1;
+    border: 1px solid #fff;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .btn-14:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  .btn-14:hover {
+    color: #000;
+  }
+  .btn-14:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  .btn-14:active {
+    top: 2px;
+  }
 
 /* Sección del canal de YT */
-
-/* Sección de últimos videos */
 .latest-videos {
     padding: 3rem;
-    background-color: black;
+    background-color: rgba(0, 0, 52, 0.4);
     text-align: center;
 }
 
@@ -169,7 +239,7 @@
 }
 
 .video-card {
-    background: black;
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
