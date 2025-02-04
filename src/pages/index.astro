@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 
-import imgLogoHorizontalWhite from "../images/Logo horizontal white.png";
 import imgLogoHorizontalBlack from "../images/Logo horizontal black.png";
 
 import imgStarship from "../images/Cohetes/Starship.jpg";
@@ -13,38 +14,11 @@ import imgFalcon9SLC40 from "../images/Cohetes/Falcon 9 SLC-40.jpg";
 
 import imgStarshipFlight7 from "../images/fotos/Starship Flight 7.jpg";
 import imgStarshipFlight7WDR from "../images/fotos/Starship Flight 7 WDR.jpg";
-
-import imgPortada from "../images/Portada.png";
-const imgPortadaSrc = `url(${imgPortada.src})`;
 ---
 
 <Layout>
-  <!-- Cabecera -->
-  <header class="main-header">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <Image src={imgLogoHorizontalWhite} alt="Lanzamientos Espaciales" />
-      </a>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="calendario.html">Calendario</a></li>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero principal -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Lanzamientos Espaciales</h1>
-      <p>Descubre los próximos lanzamientos y noticias del espacio.</p>
-    </div>
-  </section>
-
+  <Header />
+  <Hero />
   <main>
     <!-- Contenido principal -->
     <section class="launches">
@@ -253,54 +227,6 @@ const imgPortadaSrc = `url(${imgPortada.src})`;
   }
 
   /* Cabecera principal */
-  header.main-header {
-    background-color: #111;
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  }
-
-  header.main-header .logo img {
-    height: 50px;
-    max-width: 100%;
-    display: block;
-  }
-
-  /* Estilos para el menú superior, alineado a la derecha */
-  header.main-header .nav-menu {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    right: 1rem; /* Ajuste del espacio desde el borde derecho */
-    transform: translateY(-50%); /* Centra verticalmente el menú */
-  }
-
-  header.main-header .nav-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  header.main-header .nav-menu ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-  }
-
-  header.main-header .nav-menu ul li a:hover {
-    background-color: #444;
-    border-radius: 5px;
-  }
 
   /* Footer */
   footer {
@@ -316,7 +242,7 @@ const imgPortadaSrc = `url(${imgPortada.src})`;
   }
 </style>
 
-<style define:vars={{ imgPortadaSrc }}>
+<style>
   /* Carga de fuentes */
   @font-face {
     font-family: "Erbaum";
@@ -327,51 +253,6 @@ const imgPortadaSrc = `url(${imgPortada.src})`;
     font-family: "Erbaum";
     src: url("/fonts/Erbaum-Bold.ttf") format("truetype");
     font-weight: bold;
-  }
-
-  /* Hero principal */
-  .hero {
-    position: relative;
-    background: var(--imgPortadaSrc) no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-  }
-
-  /* Crear separadores */
-
-  .separador {
-    width: 100%;
-    height: 10px;
-    background-color: #000034;
-    filter: blur(10px);
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit; /* Hereda el fondo */
-    filter: blur(10px); /* Aplica el desenfoque */
-    z-index: -1; /* Asegura que el filtro esté detrás del contenido */
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: 0.5rem 0 0;
   }
 
   /* Sección lanzamientos */
