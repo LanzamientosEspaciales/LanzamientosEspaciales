@@ -1,0 +1,76 @@
+<section class="latest-videos">
+  <h2>Últimos Videos/Directos</h2>
+  <div class="videos-container">
+    <!-- Video 1 -->
+    <div class="video-card">
+      <iframe
+        src="https://www.youtube.com/embed/n8PIoMhjayc"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <p class="video-title">Starship vuelo 7</p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <iframe
+        src="https://www.youtube.com/embed/20dGFUXr2bU"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <p class="video-title">New Glenn</p>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <iframe
+        src="https://www.youtube.com/embed/0NUNmnkM9Vw"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <p class="video-title">Transporter-12</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Sección del canal de YT */
+  .latest-videos {
+    padding: 3rem;
+    background-color: rgba(0, 0, 52, 0.4);
+    text-align: center;
+  }
+
+  .latest-videos h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+
+  .videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+  }
+
+  .video-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .video-card iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+  }
+
+  .video-card .video-title {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    color: white;
+  }
+</style>
