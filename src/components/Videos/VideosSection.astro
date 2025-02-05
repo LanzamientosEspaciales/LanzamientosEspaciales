@@ -1,28 +1,13 @@
 ---
-import { YouTube } from "@astro-community/astro-embed-youtube";
+import Video from "./VideoCard.astro";
 ---
 
 <section class="latest-videos">
   <h2>Últimos Videos/Directos</h2>
   <div class="videos-container">
-    <!-- Video 1 -->
-
-    <div class="video-card">
-      <YouTube id="n8PIoMhjayc" />
-      <p class="video-title">Starship vuelo 7</p>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="video-card">
-      <YouTube id="20dGFUXr2bU" />
-      <p class="video-title">New Glenn</p>
-    </div>
-
-    <!-- Video 3 -->
-    <div class="video-card">
-      <YouTube id="0NUNmnkM9Vw" />
-      <p class="video-title">Transporter-12</p>
-    </div>
+    <Video id="n8PIoMhjayc" title="Starship vuelo 7" />
+    <Video id="20dGFUXr2bU" title="New Glenn" />
+    <Video id="0NUNmnkM9Vw" title="Transporter-12" />
   </div>
 </section>
 
@@ -44,26 +29,5 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 2rem;
-  }
-
-  .video-card {
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .video-card iframe {
-    width: 100%;
-    height: 300px;
-    border-radius: 8px;
-    aspect-ratio: 16/9;
-  }
-
-  .video-card .video-title {
-    font-size: 1.2rem;
-    margin-top: 0.8rem;
-    color: white;
   }
 </style>

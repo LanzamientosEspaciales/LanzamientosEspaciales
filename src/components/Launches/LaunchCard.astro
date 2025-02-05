@@ -4,15 +4,6 @@ import lauchCardStyle from "../styles/lauch_card.scss";
 import imgStarshipFlight7 from "../images/fotos/Starship Flight 7.jpg";
 import type { ImageMetadata } from "astro";
 
-interface Props {
-  missionName: string;
-  date: string;
-  time: string;
-  vehicle: string;
-  site: string;
-  img: ImageMetadata;
-}
-
 const { missionName, date, time, vehicle, site, img } = Astro.props;
 ---
 
