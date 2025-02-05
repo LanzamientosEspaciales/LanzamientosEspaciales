@@ -1,77 +1,63 @@
 ---
-import launchCardStyle from "../styles/launch_card.scss";
-
-import imgLogoHorizontalBlack from "../images/Logo horizontal black.png";
-
-import imgStarship from "../../images/Cohetes/Starship.jpg";
 import imgLongMarch2D from "../../images/Cohetes/Long March 2D.jpeg";
 import imgFalcon9SLC4E from "../../images/Cohetes/Falcon 9 SLC-4E.jpg";
-import imgFalcon9LC39A from "../../images/Cohetes/Falcon 9 LC-39A.webp";
-import imgFalcon9SLC40 from "../../images/Cohetes/Falcon 9 SLC-40.jpg";
-
-import imgStarshipFlight7 from "../../images/fotos/Starship Flight 7.jpg";
-import imgStarshipFlight7WDR from "../../images/fotos/Starship Flight 7 WDR.jpg";
+import imgStarshipFlight7 from "../../images/fotos/Starship Flight 7.webp";
 
 import LaunchCard from "./LaunchCard.astro";
+
+interface Launch {
+  missionName: string;
+  date: string;
+  time: string;
+  vehicle: string;
+  site: string;
+  img: ImageMetadata;
+}
+
+const launches: Array<Launch> = [
+  {
+    missionName: "Starship Vuelo 7",
+    date: "16 de enero, 2025",
+    time: "22:00 - 23:00 UTC",
+    vehicle: "Starship",
+    site: "OLP-A, Starbase, Texas",
+    img: imgStarshipFlight7,
+  },
+  {
+    missionName: "Desconocido",
+    date: "17 de enero, 2025",
+    time: "04:10 UTC",
+    vehicle: "Long March 2D",
+    site: "Centro de Lanzamiento de Satélites de Jiuquan, China",
+    img: imgLongMarch2D,
+  },
+  {
+    missionName: "Starlink 11-8",
+    date: "18 de enero, 2025",
+    time: "15:57 UTC",
+    vehicle: "Falcon 9 Block 5",
+    site: "SLC-4E, Vandenberg, California",
+    img: imgFalcon9SLC4E,
+  },
+];
 ---
 
 <!-- Contenido principal -->
 <section class="launches">
   <h2>Próximos Lanzamientos</h2>
   <div class="launch-list">
-    <LaunchCard
-      missionName="Starship Vuelo 7"
-      date="16 de enero, 2025"
-      time="22:00 - 23:00 UTC"
-      vehicle="Starship"
-      site="OLP-A, Starbase, Texas"
-      img={imgStarshipFlight7}
-    />
-
-    <LaunchCard
-      missionName="Desconocido"
-      date="17 de enero, 2025"
-      time="04:10 UTC"
-      vehicle="Long March 2D"
-      site="Centro de Lanzamiento de Satélites de Jiuquan, China"
-      img={imgLongMarch2D}
-    />
-
-    <LaunchCard
-      missionName="Starlink 11-8"
-      date="18 de enero, 2025"
-      time="15:57 UTC"
-      vehicle="Falcon 9 Block 5"
-      site="SLC-4E, Vandenberg, California"
-      img={imgFalcon9SLC4E}
-    />
-
-    <LaunchCard
-      missionName="Starlink 13-1"
-      date="21 de enero, 2025"
-      time="05:13 UTC"
-      vehicle="Falcon 9 Block 5"
-      site="LC-39A, Centro Espacial Kennedy, Florida"
-      img={imgFalcon9LC39A}
-    />
-
-    <LaunchCard
-      missionName="Starlink 11-6"
-      date="22 de enero, 2025"
-      time="14:38 UTC"
-      vehicle="Falcon 9 Block 5"
-      site="SLC-4E, Vandenberg, California"
-      img={imgFalcon9SLC4E}
-    />
-
-    <LaunchCard
-      missionName="Starlink 10-12"
-      date="24 de enero, 2025"
-      time="22:45 UTC"
-      vehicle="Falcon 9 Block 5"
-      site="SLC-40, Cabo Cañaveral, Florida"
-      img={imgFalcon9SLC40}
-    />
+    {
+      launches.map((launch) => (
+        <LaunchCard
+          missionName={launch.missionName}
+          date={launch.date}
+          time={launch.time}
+          vehicle={launch.vehicle}
+          site={launch.site}
+          img={launch.img}
+        />
+      ))
+    }
   </div>
 </section>
 <button class="custom-btn btn-14">Ver calendario</button>
