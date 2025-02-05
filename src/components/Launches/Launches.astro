@@ -12,6 +12,7 @@ interface Launch {
   vehicle: string;
   site: string;
   img: ImageMetadata;
+  important?: boolean;
 }
 
 const launches: Array<Launch> = [
@@ -22,6 +23,7 @@ const launches: Array<Launch> = [
     vehicle: "Starship",
     site: "OLP-A, Starbase, Texas",
     img: imgStarshipFlight7,
+    important: true,
   },
   {
     missionName: "Desconocido",
@@ -55,6 +57,7 @@ const launches: Array<Launch> = [
           vehicle={launch.vehicle}
           site={launch.site}
           img={launch.img}
+          important={launch.important}
         />
       ))
     }
