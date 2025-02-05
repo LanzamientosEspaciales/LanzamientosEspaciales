@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.5.6",
     "@astrojs/solid-js": "^5.0.4",
     "astro": "^5.2.3",
     "sass": "^1.83.4",
