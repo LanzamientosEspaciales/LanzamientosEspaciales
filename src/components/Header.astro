@@ -1,20 +1,21 @@
 ---
+import "../styles/global.scss";
 import { Image } from "astro:assets";
 import imgLogoHorizontalWhite from "../images/Logo horizontal white.png";
+import logoColor from "../images/logo_color.svg";
 ---
 
 <header class="main-header">
   <div class="container">
-    <a href="index.html" class="logo">
-      <Image src={imgLogoHorizontalWhite} alt="Lanzamientos Espaciales" />
-    </a>
+    <Image src={logoColor} class="logo" alt="Lanzamientos Espaciales" />
+
     <nav class="nav-menu">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="calendario.html">Calendario</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/calendario">Calendario</a></li>
+        <li><a href="/noticias">Noticias</a></li>
+        <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="/contacto">Contacto</a></li>
       </ul>
     </nav>
   </div>
@@ -22,7 +23,7 @@ import imgLogoHorizontalWhite from "../images/Logo horizontal white.png";
 
 <style type="scss">
   header.main-header {
-    background-color: #111;
+    background-color: var(--dark-blue);
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -30,11 +31,11 @@ import imgLogoHorizontalWhite from "../images/Logo horizontal white.png";
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-    .logo img {
+    box-shadow: 0 2px 5px var(--dark-blue);
+    .logo {
       height: 50px;
       max-width: fit-content;
-      display: block;
+      margin-right: 1rem;
     }
     .nav-menu {
       margin: 0;
@@ -55,10 +56,10 @@ import imgLogoHorizontalWhite from "../images/Logo horizontal white.png";
           font-size: 1rem;
           padding: 0.5rem 1rem;
           transition: background-color 0.3s;
+          border-radius: 5px;
 
           &:hover {
-            background-color: #444;
-            border-radius: 5px;
+            background-color: var(--blue);
           }
         }
       }
