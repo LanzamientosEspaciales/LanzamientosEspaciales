@@ -30,85 +30,70 @@ const { missionName, date, time, vehicle, site, img, important } = Astro.props;
 
 <style>
   .launch-card {
-    background: #222;
+    background: var(--navy-blue);
     padding: 1.5rem;
     margin: 1.5rem auto;
     width: 80%;
     max-width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    box-shadow: 0px 0px 4px var(--cerulean-blue);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease-in-out;
-    color: #fff;
     overflow: hidden;
     transition: all 0.25s;
-    z-index: 3;
-    }
-    
-    .importante {
-      box-shadow: 0 0 10px 3px rgba(255, 165, 0, 0.5);
-      background: #333;
-    }
+  }
 
-    .launch-details {
-      padding: 1rem 0;
-      text-align: left;
-    }
+  .importante {
+    box-shadow: 0 0 10px 3px var(--misty-cyan);
+  }
 
-    .launch-mission-name {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 0.8rem;
-      color: #c1272d; /* Rojo similar al de SpaceX */
-      text-align: center;
-    }
+  .launch-details {
+    padding: 1rem 0;
+    text-align: left;
+  }
 
-    .launch-date-time {
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-      color: #aaa; /* Gris para las fechas */
-    }
+  .launch-mission-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
 
-    .launch-vehicle {
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-      color: #aaa; /* Gris para las fechas */
-    }
+  .launch-date-time {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
 
-    img {
-      width: 100%;
-      height: 200px; /* Ajusta la altura según lo que necesites */
-      object-fit: cover; /* Asegura que la imagen se recorte y mantenga su proporción */
-      border-radius: 10px;
-      margin-top: 1rem;
-      aspect-ratio: 16/9;
-      padding-bottom: 25px;
-    }
-    .btn-ver-mas {
-      display: inline-block;
-      background-color: #c1272d; /* Rojo SpaceX */
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 0.6rem 1.5rem;
-      border-radius: 30px; /* Bordes redondeados */
-      text-decoration: none;
-      text-align: center;
-      margin-top: 1rem;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  .launch-vehicle {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
 
-      &:hover {
-        background-color: #a61e22;
-        transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-      }
+  img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según lo que necesites */
+    object-fit: cover; /* Asegura que la imagen se recorte y mantenga su proporción */
+    border-radius: calc(1rem / 2);
+    margin-top: 1rem;
+    aspect-ratio: 16/9;
+  }
+  .btn-ver-mas {
+    display: inline-block;
+    background-color: var(--sky-blue);
+    color: var(--navy-blue);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: calc(1rem / 2);
+    text-decoration: none;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px var(--midnight-blue);
+    transition: box-shadow 0.125s;
 
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-      }
+    &:hover {
+      box-shadow: 0 0 10px var(--cerulean-blue);
     }
   }
 </style>
