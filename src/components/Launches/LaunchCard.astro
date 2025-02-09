@@ -1,8 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import lauchCardStyle from "../styles/lauch_card.scss";
-import imgStarshipFlight7 from "../images/fotos/Starship Flight 7.jpg";
-import type { ImageMetadata } from "astro";
 
 const { missionName, date, time, vehicle, site, img, important } = Astro.props;
 ---
@@ -10,18 +7,10 @@ const { missionName, date, time, vehicle, site, img, important } = Astro.props;
 <div class={`launch-card ${important ? "importante" : ""}`}>
   <div class="launch-details">
     <h3 class="launch-mission-name">{missionName}</h3>
-    <p class="launch-date-time">
-      <strong>Fecha: </strong>{date}
-      <br />
-      <strong>Hora:</strong>
-      {time}
-    </p>
-    <p class="launch-vehicle">
-      <strong>Vehículo: </strong>{vehicle}
-    </p>
-    <p class="launch-site">
-      <strong>Lugar: </strong>{site}
-    </p>
+    <p class="launch-date"><strong>Fecha: </strong>{date}</p>
+    <p class="launch-time"><strong>Hora: </strong>{time}</p>
+    <p class="launch-vehicle"><strong>Vehículo: </strong>{vehicle}</p>
+    <p class="launch-site"><strong>Lugar: </strong>{site}</p>
   </div>
   <Image src={img} alt={missionName} class="launch-image" />
 
@@ -42,32 +31,26 @@ const { missionName, date, time, vehicle, site, img, important } = Astro.props;
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
     transition: all 0.25s;
-  }
 
-  .importante {
-    box-shadow: 0 0 10px 3px var(--misty-cyan);
+    &.importante {
+      box-shadow: 0 0 10px 3px var(--misty-cyan);
+    }
   }
 
   .launch-details {
-    padding: 1rem 0;
     text-align: left;
+    flex-grow: 1;
+
+    p {
+      margin: 0;
+    }
   }
 
   .launch-mission-name {
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 0.8rem;
+    margin: 0 0 1rem 0;
     text-align: center;
-  }
-
-  .launch-date-time {
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .launch-vehicle {
-    font-size: 1.1rem;
-    margin-bottom: 0.6rem;
   }
 
   img {
