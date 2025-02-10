@@ -1,12 +1,10 @@
 ---
 import "../styles/global.scss";
 import { Image } from "astro:assets";
-import imgLogoHorizontalWhite from "../images/Logo horizontal white.png";
 import logoColor from "../images/logo_color.svg";
 ---
 
 <header class="main-header">
-  <div class="container">
     <Image src={logoColor} class="logo" alt="Lanzamientos Espaciales" />
 
     <nav class="nav-menu">
@@ -18,24 +16,24 @@ import logoColor from "../images/logo_color.svg";
         <li><a href="/contacto">Contacto</a></li>
       </ul>
     </nav>
-  </div>
 </header>
 
 <style type="scss">
   header.main-header {
-    background-color: var(--dark-blue);
-    padding: 0.5rem 1rem;
     display: flex;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px var(--dark-blue);
+    position: fixed;
+    width: 100%;
+    background-color: var(--dark-blue);
+    z-index: 100;
+    padding: 0.5rem;
+
     .logo {
-      height: 50px;
+      height: 3rem;
       max-width: fit-content;
-      margin-right: 1rem;
     }
     .nav-menu {
       margin: 0;
@@ -58,9 +56,8 @@ import logoColor from "../images/logo_color.svg";
           border-radius: 5px;
 
           &:hover {
-            background-color: var(--blue);
+            background-color: var(--midnight-blue);
           }
-        }
       }
     }
   }
