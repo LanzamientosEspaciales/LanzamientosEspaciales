@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import imgPortada from "../images/deltaHeavy.webp";
 ---
 
-<section class="hero">
+<section id="hero">
   <Image src={imgPortada} alt="Lanzamiento de un cohete Delta Heavy" />
   <div class="overlay">
     <h1>Lanzamientos Espaciales</h1>
@@ -13,7 +13,7 @@ import imgPortada from "../images/deltaHeavy.webp";
 
 <style>
   /* Hero principal */
-  .hero {
+  #hero {
     position: relative;
     height: 100vh;
     display: flex;

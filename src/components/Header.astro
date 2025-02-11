@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import logoColor from "../images/logo_color.svg";
 ---
 
-<header class="main-header">
+<header id="main-header">
     <Image src={logoColor} class="logo" alt="Lanzamientos Espaciales" />
 
     <nav class="nav-menu">
@@ -19,7 +19,7 @@ import logoColor from "../images/logo_color.svg";
 </header>
 
 <style type="scss">
-  header.main-header {
+  #main-header {
     display: flex;
     top: 0;
     left: 0;
