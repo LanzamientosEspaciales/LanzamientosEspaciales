@@ -15,7 +15,7 @@ import imgPortada from "../images/deltaHeavy.webp";
   /* Hero principal */
   .hero {
     position: relative;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,6 @@ import imgPortada from "../images/deltaHeavy.webp";
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.9) saturate(1.2) blur(2px);
     }
 
     .overlay {
@@ -56,6 +55,21 @@ import imgPortada from "../images/deltaHeavy.webp";
         font-weight: 300;
         margin: 0.5rem 0 0;
         z-index: 100;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          0,
+          var(--midnight-blue) 0%,
+          transparent 35%
+        );
+        backdrop-filter: blur(4px) brightness(70%);
       }
     }
 
