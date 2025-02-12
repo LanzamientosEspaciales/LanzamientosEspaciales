@@ -3,26 +3,17 @@ import imgLongMarch2D from "../../images/Cohetes/Long March 2D.jpeg";
 import imgFalcon9SLC4E from "../../images/Cohetes/Falcon 9 SLC-4E.jpg";
 import imgStarshipFlight7 from "../../images/fotos/Starship Flight 7.webp";
 
-import LaunchCard from "./LaunchCard.astro";
+import { type LaunchType } from "./LaunchType";
+import LaunchCard from "./LaunchCard.svelte";
 
-interface Launch {
-  missionName: string;
-  date: string;
-  time: string;
-  vehicle: string;
-  site: string;
-  img: ImageMetadata;
-  important?: boolean;
-}
-
-const launches: Array<Launch> = [
+const launches: Array<LaunchType> = [
   {
     missionName: "Starship Vuelo 7",
     date: "16 de enero, 2025",
     time: "22:00 - 23:00 UTC",
     vehicle: "Starship",
     site: "OLP-A, Starbase, Texas",
-    img: imgStarshipFlight7,
+    img: imgStarshipFlight7.src,
     important: true,
   },
   {
@@ -31,7 +22,7 @@ const launches: Array<Launch> = [
     time: "04:10 UTC",
     vehicle: "Long March 2D",
     site: "Centro de Lanzamiento de Satélites de Jiuquan, China",
-    img: imgLongMarch2D,
+    img: imgLongMarch2D.src,
   },
   {
     missionName: "Starlink 11-8",
@@ -39,7 +30,7 @@ const launches: Array<Launch> = [
     time: "15:57 UTC",
     vehicle: "Falcon 9 Block 5",
     site: "SLC-4E, Vandenberg, California",
-    img: imgFalcon9SLC4E,
+    img: imgFalcon9SLC4E.src,
   },
 ];
 ---

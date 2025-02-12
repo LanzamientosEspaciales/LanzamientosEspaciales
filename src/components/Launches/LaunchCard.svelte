@@ -1,23 +1,22 @@
----
-import { Image } from "astro:assets";
+<script lang="ts">
+  import { type LaunchType } from "./LaunchType";
+  const launch: LaunchType = $props();
+</script>
 
-const { missionName, date, time, vehicle, site, img, important } = Astro.props;
----
-
-<div class={`launch-card ${important ? "importante" : ""}`}>
+<div class={`launch-card ${launch.important ? "importante" : ""}`}>
   <div class="launch-details">
-    <h3 class="launch-mission-name">{missionName}</h3>
-    <p class="launch-date"><strong>Fecha: </strong>{date}</p>
-    <p class="launch-time"><strong>Hora: </strong>{time}</p>
-    <p class="launch-vehicle"><strong>Vehículo: </strong>{vehicle}</p>
-    <p class="launch-site"><strong>Lugar: </strong>{site}</p>
+    <h3 class="launch-mission-name">{launch.missionName}</h3>
+    <p class="launch-date"><strong>Fecha: </strong>{launch.date}</p>
+    <p class="launch-time"><strong>Hora: </strong>{launch.time}</p>
+    <p class="launch-vehicle"><strong>Vehículo: </strong>{launch.vehicle}</p>
+    <p class="launch-site"><strong>Lugar: </strong>{launch.site}</p>
   </div>
-  <Image src={img} alt={missionName} class="launch-image" />
+  <img src={launch.img} alt={launch.missionName} class="launch-image" />
 
-  <a href="#" class="btn-ver-mas"> Ver más </a>
+  <a href="/" class="btn-ver-mas"> Ver más </a>
 </div>
 
-<style>
+<style lang="scss">
   .launch-card {
     background-color: var(--navy-blue);
     padding: 1.5rem;
