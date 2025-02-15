@@ -1,13 +1,22 @@
 ---
-import Video from "./VideoCard.astro";
+import { type Video } from "./VideoType";
+import VideoCard from "./VideoCard.astro";
+
+const videos: Video[] = [
+  { id: "n8PIoMhjayc", title: "Starship vuelo 7" },
+  { id: "20dGFUXr2bU", title: "New Glenn" },
+  { id: "0NUNmnkM9Vw", title: "Transporter-12" },
+];
 ---
 
 <section id="latest-videos" class="border-section">
   <h2>Últimos Videos/Directos</h2>
   <div class="videos-container">
-    <Video id="n8PIoMhjayc" title="Starship vuelo 7" />
-    <Video id="20dGFUXr2bU" title="New Glenn" />
-    <Video id="0NUNmnkM9Vw" title="Transporter-12" />
+    {
+      videos.map((video: Video) => (
+        <VideoCard id={video.id} title={video.title} />
+      ))
+    }
   </div>
 </section>
 
