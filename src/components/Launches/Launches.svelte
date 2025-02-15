@@ -5,9 +5,12 @@
 
   async function fetchLaunches() {
     let req = await fetch(API_URL).then((res: Response) => res.json());
-    let launches: any[] = Object.values(req["events"])
+    let launches: LaunchType[] = Object.values(req["events"])
       .sort((a: any, b: any) => {
         return a["start"] - b["start"];
+      })
+      .filter((launch: any) => {
+        return launch["start"] >= Date.now() / 1000;
       })
       .map((launch: any) => {
         let [vehicle, missionName] = launch["name"].split("•");
@@ -28,7 +31,8 @@
           important: launch["featured"] == "yes" ? true : false,
         };
       });
-    return launches.slice(launches.length - 3, launches.length);
+
+    return launches.slice(0, 3);
   }
 
   let launches: Promise<LaunchType[]> = fetchLaunches();
